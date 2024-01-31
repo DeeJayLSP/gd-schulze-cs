@@ -1,7 +1,7 @@
 Godot Schulze Demo
 -
 
-A demo showcasing the Schulze voting algorithm using C# (because I couldn't figure out how to implement in GDScript).  
+A demo showcasing the [Schulze voting method](https://en.wikipedia.org/wiki/Schulze_method) using C# (because I couldn't figure out how to implement in GDScript).  
   
 Note that Godot here is being used more as an UI frontend.
 
