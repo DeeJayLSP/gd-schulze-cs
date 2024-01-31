@@ -5,6 +5,8 @@ A demo showcasing the Schulze voting algorithm using C# (because I couldn't figu
   
 Note that Godot here is being used more as an UI frontend.
 
+![screenshot](https://github.com/DeeJayLSP/gd-schulze-cs/raw/master/images/preview.webp)
+
 ### How to use
 
 - Type something that represents the candidate on each field by order of preference;
