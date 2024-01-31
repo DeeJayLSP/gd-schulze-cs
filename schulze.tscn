@@ -1,0 +1,141 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1o4pcl0rmuvp"]
+
+[ext_resource type="Script" path="res://SchulzeMethod.cs" id="1_vo0ap"]
+
+[node name="Schulze" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vo0ap")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Ranking" type="Label" parent="CenterContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+text = "Awaiting finish..."
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Schulze Voting System
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Field1" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Field1"]
+layout_mode = 2
+text = "Preference 1:"
+horizontal_alignment = 1
+
+[node name="InputField1" type="LineEdit" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Field1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 28)
+layout_mode = 2
+
+[node name="Field2" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Field2"]
+layout_mode = 2
+text = "Preference 2:"
+horizontal_alignment = 1
+
+[node name="InputField2" type="LineEdit" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Field2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 28)
+layout_mode = 2
+
+[node name="Field3" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Field3"]
+layout_mode = 2
+text = "Preference 3:"
+horizontal_alignment = 1
+
+[node name="InputField3" type="LineEdit" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Field3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 28)
+layout_mode = 2
+
+[node name="Field4" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Field4"]
+layout_mode = 2
+text = "Preference 4:"
+horizontal_alignment = 1
+
+[node name="InputField4" type="LineEdit" parent="CenterContainer/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/Field4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 28)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="TotalVotes" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Total votes: 0"
+
+[node name="NextVote" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Next Vote"
+
+[node name="Finish" type="Button" parent="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Finish
+"
+
+[node name="Winner" type="Label" parent="CenterContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Awaiting finish..."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2/NextVote" to="." method="OnNextVotePressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/VBoxContainer/HBoxContainer2/Finish" to="." method="OnFinishPressed"]
